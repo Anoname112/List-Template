@@ -15,7 +15,7 @@ const canvasPosition = "fixed";
 
 // Message
 const msgFontColor = "#FFFFFF";
-const msgFontSize = 70 * scaling;
+const msgFontSize = 40 * scaling;
 const msgSpacing = (isMobile || isPortrait) ? 5 + scaling * 5 : 4 + scaling * 6;
 const msgFont = msgFontSize + "px Verdana";
 const msgBackPadding = 5;
