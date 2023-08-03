@@ -4,7 +4,7 @@ var hidden;
 var left;
 var right;
 
-var listname = 'JRPG Main Battle Theme';
+var listname = 'JRPG: Main Battle Theme';
 var list = [
 	{
 		'title' : 'Chrono Trigger',
