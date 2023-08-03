@@ -45,8 +45,8 @@ function initDocument () {
 	canvas = getElement("myCanvas");
 	canvas.addEventListener("touchstart", onMouseDown, false);
 	canvas.addEventListener("touchend", onMouseUp, false);
-	canvas.onmousedown = onMouseDown;
-	canvas.onmouseup = onMouseUp;
+	//canvas.onmousedown = onMouseDown;
+	//canvas.onmouseup = onMouseUp;
 	canvas.style.position = canvasPosition;
 	canvas.style.borderRadius = canvasBorderRadius;
 	canvas.width = window.innerWidth;
