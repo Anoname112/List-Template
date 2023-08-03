@@ -15,8 +15,8 @@ const canvasPosition = "fixed";
 
 // Message
 const msgFontColor = "#FFFFFF";
-const msgFontSize = isMobile ? 30 : 60;
-const msgSpacing = (isMobile || isPortrait) ? 5 + scaling * 5 : 4 + scaling * 6;
+const msgFontSize = isMobile || isPortrait ? 28 : 60;
+const msgSpacing = isMobile || isPortrait ? 5 + scaling * 5 : 4 + scaling * 6;
 const msgFont = msgFontSize + "px Segoe UI";
 const msgBackPadding = 5;
 const msgBackRadius = 5;

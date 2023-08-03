@@ -81,13 +81,13 @@ function initDocument () {
 	left = getElement('left');
 	left.style.position = 'absolute';
 	left.style.top = (window.innerHeight - left.clientHeight) / 2;
-	left.style.left = '2px';
+	left.style.left = '5px';
 	left.onclick = back;
 	
 	right = getElement('right');
 	right.style.position = 'absolute';
 	right.style.top = (window.innerHeight - right.clientHeight) / 2;
-	right.style.right = '2px';
+	right.style.right = '5px';
 	right.onclick = next;
 }
 
@@ -136,8 +136,8 @@ function onKeyUp (e) {
 }
 
 function onMouseDown (e) {
-	//var controlCanvasX = e.touches[0].pageX
-	//var controlCanvasY = e.touches[0].pageY
+	//var controlCanvasX = e.touches[0].pageX;
+	//var controlCanvasY = e.touches[0].pageY;
 }
 
 function onMouseUp (e) {
