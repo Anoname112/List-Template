@@ -1,8 +1,10 @@
 var canvas;
 var ctx;
 var hidden;
+var left;
+var right;
 
-var listname = 'Top 3 JRPG Main Battle Theme';
+var listname = 'JRPG Battle Theme';
 var list = [
 	{
 		'title' : 'Chrono Trigger',
@@ -71,6 +73,18 @@ function initDocument () {
 		}, false);
 		sounds.push(sound);
 	}
+	
+	left = getElement('left');
+	left.style.position = 'absolute';
+	left.style.top = (canvas.height - left.clientHeight) / 2;
+	left.style.left = '2px';
+	left.onclick = back;
+	
+	right = getElement('right');
+	right.style.position = 'absolute';
+	right.style.top = (canvas.height - right.clientHeight) / 2;
+	right.style.right = '2px';
+	right.onclick = next;
 }
 
 function onContextMenu (e) {
@@ -103,7 +117,6 @@ function onKeyUp (e) {
 		case 13:	// Enter
 		case 32:	// Space
 		case 90:	// Z
-			increment()
 			break;
 		case 37:	// Left
 			break;
@@ -124,10 +137,20 @@ function onMouseDown (e) {
 }
 
 function onMouseUp (e) {
-	increment();
+	
 }
 
-function increment () {
+function back () {
+	if (current >= 0) {
+		stopAudio(sounds[current]);
+		
+		current--;
+		draw();
+		playAudio(sounds[current]);
+	}
+}
+
+function next () {
 	if (current < list.length - 1) {
 		if (current >= 0) stopAudio(sounds[current]);
 		
