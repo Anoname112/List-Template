@@ -4,7 +4,7 @@ var hidden;
 var left;
 var right;
 
-var listname = 'JRPG Battle Theme';
+var listname = 'JRPG - Main Battle Theme';
 var list = [
 	{
 		'title' : 'Chrono Trigger',
@@ -170,7 +170,7 @@ function draw () {
 	
 	// Draw background
 	if (current >= 0) {
-		var w = images[0].width / images[0].height * window.innerHeight;
+		var w = images[current].width * (window.innerHeight / images[current].height);
 		var x = (window.innerWidth - w) / 2;
 		drawImage(images[current], x, 0, w, window.innerHeight);
 		
@@ -179,7 +179,7 @@ function draw () {
 		ctx.globalAlpha = 1.0;
 		
 		drawMessage(list[current]['title'], window.innerWidth / 2, window.innerHeight / 2, 0, 0, 'center');
-		
+		drawMessage(list.length - current, 40, 40, 0, 0, 'center');
 	}
 	else drawMessage(listname, window.innerWidth / 2, window.innerHeight / 2, 0, 0, 'center');
 }
