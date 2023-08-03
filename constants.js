@@ -12,16 +12,12 @@ const bodyFont = "15px Segoe UI";
 // Canvas
 const canvasBorderRadius = 0;
 const canvasPosition = "fixed";
+const canvasOpacity = 0.8;
 
 // Message
 const msgFontColor = "#FFFFFF";
 const msgFontSize = isMobile || isPortrait ? 28 : 60;
-const msgSpacing = isMobile || isPortrait ? 5 + scaling * 5 : 4 + scaling * 6;
 const msgFont = msgFontSize + "px Segoe UI";
-const msgBackPadding = 5;
-const msgBackRadius = 5;
-const msgBackWidth = 100;
-const msgBackColor = "#222222";
 
 // Control
 const controlPadding = 10;
