@@ -170,7 +170,9 @@ function draw () {
 	
 	// Draw background
 	if (current >= 0) {
-		drawImage(images[current], 0, 0, window.innerWidth, window.innerHeight);
+		var w = images[0].width / images[0].height * window.innerHeight;
+		var x = (window.innerWidth - w) / 2;
+		drawImage(images[current], x, 0, w, window.innerHeight);
 		
 		ctx.globalAlpha = 0.8;
 		fillRect(0, 0, window.innerWidth, window.innerHeight, '#333');
