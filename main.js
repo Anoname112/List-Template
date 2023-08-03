@@ -44,6 +44,7 @@ function initDocument () {
 	document.body.style.font = bodyFont;
 	
 	// Prepare canvas
+	const ratio = window.devicePixelRatio;
 	canvas = getElement("myCanvas");
 	canvas.addEventListener("touchstart", onMouseDown, false);
 	canvas.addEventListener("touchend", onMouseUp, false);
@@ -51,8 +52,11 @@ function initDocument () {
 	//canvas.onmouseup = onMouseUp;
 	canvas.style.position = canvasPosition;
 	canvas.style.borderRadius = canvasBorderRadius;
-	canvas.width = window.innerWidth;
-	canvas.height = window.innerHeight;
+	canvas.width = window.innerWidth * ratio;
+	canvas.height = window.innerHeight * ratio;
+	canvas.style.width = window.innerWidth + 'px';
+	canvas.style.height = window.innerHeight + 'px';
+	canvas.getContext("2d").scale(ratio, ratio)
 	ctx = canvas.getContext("2d");
 	
 	// Prepare hidden area
@@ -76,13 +80,13 @@ function initDocument () {
 	
 	left = getElement('left');
 	left.style.position = 'absolute';
-	left.style.top = (canvas.height - left.clientHeight) / 2;
+	left.style.top = (window.innerHeight - left.clientHeight) / 2;
 	left.style.left = '2px';
 	left.onclick = back;
 	
 	right = getElement('right');
 	right.style.position = 'absolute';
-	right.style.top = (canvas.height - right.clientHeight) / 2;
+	right.style.top = (window.innerHeight - right.clientHeight) / 2;
 	right.style.right = '2px';
 	right.onclick = next;
 }
@@ -162,18 +166,18 @@ function next () {
 
 function draw () {
 	// Invalidate
-	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
 	
 	// Draw background
 	if (current >= 0) {
-		drawImage(images[current], 0, 0, canvas.width, canvas.height);
+		drawImage(images[current], 0, 0, window.innerWidth, window.innerHeight);
 		
-		ctx.globalAlpha = 0.5;
-		fillRect(0, 0, canvas.width, canvas.height, '#333');
+		ctx.globalAlpha = 0.8;
+		fillRect(0, 0, window.innerWidth, window.innerHeight, '#333');
 		ctx.globalAlpha = 1.0;
 		
-		drawMessage(list[current]['title'], canvas.width / 2, canvas.height / 2, 0, 0, 'center');
+		drawMessage(list[current]['title'], window.innerWidth / 2, window.innerHeight / 2, 0, 0, 'center');
 		
 	}
-	else drawMessage(listname, canvas.width / 2, canvas.height / 2, 0, 0, 'center');
+	else drawMessage(listname, window.innerWidth / 2, window.innerHeight / 2, 0, 0, 'center');
 }
