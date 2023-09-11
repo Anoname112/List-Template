@@ -112,7 +112,6 @@ function onKeyDown (e) {
 		case 88:	// X
 			break;
 		default:
-			break;
 	}
 }
 
@@ -132,7 +131,6 @@ function onKeyUp (e) {
 		case 88:	// X
 			break;
 		default:
-			break;
 	}
 }
 
